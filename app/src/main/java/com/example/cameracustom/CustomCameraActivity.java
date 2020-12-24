@@ -29,6 +29,8 @@ public class CustomCameraActivity extends AppCompatActivity implements SurfaceHo
                 fos.write(data);
                 fos.close();
                 Intent intent = new Intent(CustomCameraActivity.this,ResultActivity.class);
+                //getAbsoluteFile()返回的是一个File类对象，这个File对象表示是当前File对象的绝对路径名形式
+                //getAbsolutePath()返回的是一个字符串，这个字符串就是当前File对象的绝对路径名的字符串形式
                 intent.putExtra("picPath",tempFile.getAbsolutePath());
                 startActivity(intent);
                 CustomCameraActivity.this.finish();
